@@ -24,8 +24,11 @@ Authorization : Basic Y2xpZW50OmNsaWVudHBhc3N3b3Jk
 You'll have to choose x-www-form-urlencoded and set the values:
 
 client_id   client
+
 username    user
+
 password    user
+
 grant_type  password
 
 ![alt text](https://snag.gy/HlJZRq.jpg)
