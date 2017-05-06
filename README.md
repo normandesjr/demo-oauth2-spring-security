@@ -53,6 +53,7 @@ Now you are able to call the API using the access token
 2. Set the Authorization header with Bearer <token>
 
 Key: Authorization
+
 Value: Bearer bd999429-898b-4201-908e-40e846ec0105
 
 That's all! When you hit the Send button, you'll receive:
