@@ -19,6 +19,17 @@ Authorization : Basic Y2xpZW50OmNsaWVudHBhc3N3b3Jk
 
 ![alt text](https://snag.gy/FSs0Cw.jpg)
 
+4. Set the body
+
+You'll have to choose x-www-form-urlencoded and set the values:
+
+client_id   client
+username    user
+password    user
+grant_type  password
+
+![alt text](https://snag.gy/HlJZRq.jpg)
+
 When you hit the send button, you'll get something like that:
 
 ```json
@@ -56,5 +67,5 @@ That's all! When you hit the Send button, you'll receive:
 ]
 ```
 
-
+![alt text](https://snag.gy/WFjXt5.jpg)
  
