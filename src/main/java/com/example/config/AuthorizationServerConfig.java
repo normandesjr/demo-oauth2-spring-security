@@ -15,28 +15,29 @@ import org.springframework.security.oauth2.provider.token.store.InMemoryTokenSto
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
-	@Autowired
+    @Autowired
     private AuthenticationManager authenticationManager;
-	
-	@Override
+    
+    @Override
     public void configure(final AuthorizationServerEndpointsConfigurer endpoints) {
-		endpoints.tokenStore(tokenStore())
-			.authenticationManager(authenticationManager);
+        endpoints
+                .tokenStore(tokenStore())
+                .authenticationManager(authenticationManager);
     }
-	
-	@Override
+
+    @Override
     public void configure(final ClientDetailsServiceConfigurer clients) throws Exception {
-		clients.inMemory() 
-	        .withClient("client") 
-	        .secret("clientpassword")
-	        .scopes("read", "write") 
-	        .authorizedGrantTypes("password")
-	        .accessTokenValiditySeconds(3600);
+        clients.inMemory()
+                .withClient("client")
+                .secret("{noop}clientpassword")//See: https://stackoverflow.com/questions/49654143/spring-security-5-there-is-no-passwordencoder-mapped-for-the-id-null
+                .scopes("read", "write")
+                .authorizedGrantTypes("password")
+                .accessTokenValiditySeconds(3600);
     }
-	
-	@Bean
-	public TokenStore tokenStore() {
-		return new InMemoryTokenStore();
-	}
+
+    @Bean
+    public TokenStore tokenStore() {
+        return new InMemoryTokenStore();
+    }
 
 }
