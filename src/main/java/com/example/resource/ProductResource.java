@@ -11,37 +11,37 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/products")
 public class ProductResource {
 
-	@GetMapping
-	public List<Product> list() {
-		return Arrays.asList(new Product("Mug for Coffee", 12.99), new Product("Coffee cup", 4.21));
-	}
+    @GetMapping
+    public List<Product> list() {
+        return Arrays.asList(new Product("Mug for Coffee", 12.99), new Product("Coffee cup", 4.21));
+    }
 
-	public static class Product {
+    public static class Product {
 
-		private String name;
-		private double value;
+        private String name;
+        private double value;
 
-		public Product(String name, double value) {
-			this.name = name;
-			this.value = value;
-		}
+        public Product(String name, double value) {
+            this.name = name;
+            this.value = value;
+        }
 
-		public String getName() {
-			return name;
-		}
+        public String getName() {
+            return name;
+        }
 
-		public void setName(String name) {
-			this.name = name;
-		}
+        public void setName(String name) {
+            this.name = name;
+        }
 
-		public double getValue() {
-			return value;
-		}
+        public double getValue() {
+            return value;
+        }
 
-		public void setValue(double value) {
-			this.value = value;
-		}
+        public void setValue(double value) {
+            this.value = value;
+        }
 
-	}
+    }
 
 }
